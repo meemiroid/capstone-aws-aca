@@ -15,6 +15,10 @@ resource "aws_lb" "alb_example" {
 #   }
 }
 
+output "dns_name" {
+    value = aws_lb.alb_example.dns_name
+}
+
 resource "aws_lb_target_group" "alb_example_tg" {
   name     = "alb-example-tg"
   port     = 80
